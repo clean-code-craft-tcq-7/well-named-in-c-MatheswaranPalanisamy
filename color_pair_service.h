@@ -4,6 +4,6 @@ typedef struct {
     MinorColor minorColor;
 } ColorPair;
 
-void ColorPairToString(const ColorPair* colorPair, char* buffer);
+void ColorPairToString(const ColorPair colorPair, char* buffer);
 ColorPair GetColorFromPairNumber(int pairNumber);
-int GetPairNumberFromColor(const ColorPair* colorPair);
+int GetPairNumberFromColor(const ColorPair colorPair);

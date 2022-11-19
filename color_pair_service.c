@@ -3,10 +3,10 @@
 #include "color_pair_config.h"
 #include "color_pair_service.h"
 
-void ColorPairToString(const ColorPair* colorPair, char* buffer) {
-    sprintf(buffer, "%s %s",
-        MajorColorNames[colorPair->majorColor],
-        MinorColorNames[colorPair->minorColor]);
+void ColorPairToString(const ColorPair colorPair, char* buffer) {
+    sprintf(buffer, "%s - %s",
+        MajorColorNames[colorPair.majorColor],
+        MinorColorNames[colorPair.minorColor]);
 }
 
 ColorPair GetColorFromPairNumber(int pairNumber) {
@@ -19,7 +19,7 @@ ColorPair GetColorFromPairNumber(int pairNumber) {
     return colorPair;
 }
 
-int GetPairNumberFromColor(const ColorPair* colorPair) {
-    return colorPair->majorColor * numberOfMinorColors +
-            colorPair->minorColor + 1;
+int GetPairNumberFromColor(const ColorPair colorPair) {
+    return colorPair.majorColor * numberOfMinorColors +
+            colorPair.minorColor + 1;
 }
